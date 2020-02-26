@@ -1,5 +1,5 @@
-<aura:application>
+<aura:application extends="force:slds">
     <!-- <c:helloWorld /> -->
     <!-- <c:helloMessage /> -->
-    <c:campingListItem item="{!v.item}"/>
+    <c:campingList />
 </aura:application>

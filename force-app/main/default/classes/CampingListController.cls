@@ -1,12 +1,17 @@
 public class CampingListController {
-    @auraenabled
-    public static List<Camping_Item__c> getItems () {
-        List<Camping_Item__c> CI = [select id, name,price__c,Quantity__c,Packed__c from Camping_Item__c ];
-        return CI;
+
+    @AuraEnabled
+    public static List<Camping_Item__c> getItems() {
+
+        return [SELECT Id, Name, CreatedDate, Packed__c, Price__c, Quantity__c
+                FROM Camping_Item__c];
     }
-    @auraenabled
-    public static Camping_Item__c saveItem (Camping_Item__c item){
-        insert item;
-        return item;
+
+    @AuraEnabled
+    public static Camping_Item__c saveItem(Camping_Item__c objCampingItem) {
+
+        // Perform isUpdatable() checking first, then
+        upsert objCampingItem;
+        return objCampingItem;
     }
 }

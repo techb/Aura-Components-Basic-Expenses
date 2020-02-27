@@ -19,7 +19,7 @@
     </div>
 
     <aura:if isTrue="{!not(empty(v.recordSaveError))}">
-        <div class="recordSaveError">
+        <div class="recordError">
             {!v.recordSaveError}</div>
     </aura:if>
 </aura:component>
